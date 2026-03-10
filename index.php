@@ -12,7 +12,7 @@
     }
   </style>
 </head>
-<title>Register</title>
+<title>Note App</title>
 </head>
 
 <body>
@@ -25,17 +25,17 @@
     </div>
 
     <!-- // form section -->
-    <form action="./aksi-login.php" method="post" class="flex flex-col gap-4 mt-6">
+    <form action="./main.php" method="post" class="flex flex-col gap-4 mt-6">
         <div class="flex flex-col gap-2">
           <label for="email">Email</label>
-          <input type="email" name="inputan_email" id="email" class="p-2 bg-[#f8fafc] rounded border border-[#9DABBE]" placeholder="Enter your email">
+          <input type="email" name="input_email" id="email" class="p-2 bg-[#f8fafc] rounded border border-[#9DABBE]" placeholder="Enter your email">
         </div>
         <div class="flex flex-col gap-2">
           <label for="password">Password</label>
-          <input type="password" name="inputan_password" id="password" class="p-2 bg-[#f8fafc] rounded border border-[#9DABBE]" placeholder="Enter your password">
+          <input type="password" name="input_password" id="password" class="p-2 bg-[#f8fafc] rounded border border-[#9DABBE]" placeholder="Enter your password">
         </div>
 
-        <a href="" class="self-end text-[#7C3AED]">Forgot password?</a>
+        <a href="./forgot-password.php" class="self-end text-[#7C3AED]">Forgot password?</a>
 
         <button type="submit" class="bg-[#7C3AED] text-white font-bold p-2 mt-4 hover:bg-[#6b21a8] transition shadow-lg rounded">Sign In</button>
       </form>
