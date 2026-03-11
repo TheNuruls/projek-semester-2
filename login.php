@@ -17,80 +17,110 @@ if(isset($_POST['login'])){
 <html>
 <head>
 <title>Login</title>
+
 <style>
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg,#0c2a4d,#1f4c73);
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+height:100vh;
+background:linear-gradient(135deg,#0b2f53,#3d6c94);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* kotak utama */
 .container{
-    width:800px;
-    height:350px;
-    background:linear-gradient(135deg,#0b2744,#2e5f8a);
-    border-radius:8px;
-    display:flex;
-    padding:40px;
-    color:white;
+width:90%;
+height:90vh;
+background:linear-gradient(120deg,#041e35,#0f3a5e,#3a6b95);
+border:6px solid rgba(255,255,255,0.25);
+padding:70px;
+display:flex;
+color:white;
 }
 
 /* kiri */
-.kiri{
-    width:50%;
+.left{
+width:50%;
 }
 
-.kiri h1{
-    letter-spacing:3px;
+.left h1{
+font-size:48px;
+letter-spacing:5px;
+line-height:60px;
+margin-bottom:20px;
 }
 
-.kiri p{
-    font-size:14px;
-    opacity:0.8;
+.left p{
+font-size:13px;
+width:260px;
+color:#cfd9e4;
 }
 
 /* kanan */
-.kanan{
-    width:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.right{
+width:50%;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-.form-login{
-    width:250px;
-    padding:20px;
-    border:1px solid rgba(255,255,255,0.4);
-    border-radius:10px;
-    backdrop-filter: blur(5px);
+/* kotak login */
+.login-box{
+width:270px;
+padding:25px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.5);
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(6px);
 }
 
-.form-login h3{
-    text-align:center;
-    margin-bottom:15px;
+.login-box h3{
+text-align:center;
+margin-bottom:15px;
 }
 
-.input{
-    width:100%;
-    padding:8px;
-    margin:6px 0;
-    border-radius:20px;
-    border:none;
-    outline:none;
+/* label */
+.login-box label{
+font-size:12px;
+color:#dbe6f1;
 }
 
-.btn{
-    width:100%;
-    padding:8px;
-    margin-top:10px;
-    border:none;
-    border-radius:20px;
-    background:linear-gradient(to right,#c58aa5,#7da7d9);
-    color:white;
-    cursor:pointer;
+/* input */
+.login-box input{
+width:100%;
+padding:8px;
+margin:6px 0 12px 0;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.6);
+background:transparent;
+color:white;
+outline:none;
+padding-left:12px;
+}
+
+/* tombol */
+.login-box button{
+width:100%;
+padding:9px;
+border:none;
+border-radius:20px;
+background:linear-gradient(to right,#c58aa5,#7fa6d4);
+color:white;
+cursor:pointer;
+margin-top:5px;
+font-weight:bold;
+}
+
+.login-box button:hover{
+opacity:0.9;
 }
 
 </style>
@@ -100,31 +130,33 @@ body{
 
 <div class="container">
 
-<div class="kiri">
+<div class="left">
 <h1>SELAMAT<br>DATANG!</h1>
-<p>
-Login dengan akun google untuk dapat melakukan penilaian.
-</p>
+<p>Login dengan akun google untuk dapat melakukan penilaian.</p>
 </div>
 
-<div class="kanan">
-<div class="form-login">
+<div class="right">
 
+<div class="login-box">
 <h3>Login</h3>
 
-<form method="POST">
+<form>
 
-<input type="text" name="nama" placeholder="Nama" class="input">
+<label>Nama</label>
+<input type="text" placeholder="Masukan ID">
 
-<input type="text" name="nis" placeholder="NIS" class="input">
+<label>NIS</label>
+<input type="text" placeholder="Masukan ID">
 
-<input type="password" name="kode" placeholder="Kode" class="input">
+<label>KODE</label>
+<input type="password" placeholder="Masukan ID">
 
-<button type="submit" name="login" class="btn">LOGIN</button>
+<button>LOGIN</button>
 
 </form>
 
 </div>
+
 </div>
 
 </div>
