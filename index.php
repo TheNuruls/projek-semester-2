@@ -1,49 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+if(isset($_POST['login'])){
+    $nama = $_POST['nama'];
+    $nis = $_POST['nis'];
+    $kode = $_POST['kode'];
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
-  <style>
-    * {
-      font-family: 'Inter', sans-serif;
+    if($nama=="admin" && $nis=="123" && $kode=="123"){
+        echo "<script>alert('Login berhasil');</script>";
+    }else{
+        echo "<script>alert('Login gagal');</script>";
     }
-  </style>
-</head>
-<title>Note App</title>
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+
+font-family:'Inter',sans-serif;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:120px;
+
+/* Background gradient Figma */
+
+background: linear-gradient(
+135deg,
+#345A80 0%,
+#01162B 44%,
+#02305E 71%,
+#6A90B4 100%
+);
+
+color:white;
+
+}
+
+/* TEXT KIRI */
+
+.left{
+
+width:40%;
+
+}
+
+.left h1{
+
+font-family:'Poppins',sans-serif;
+
+font-size:64px;
+
+letter-spacing:8px;
+
+line-height:70px;
+
+margin-bottom:30px;
+
+color:#D2DBEC;
+
+}
+
+.line{
+
+width:160px;
+
+height:2px;
+
+background:#D2DBEC;
+
+margin-bottom:30px;
+
+}
+
+.left p{
+
+width:280px;
+
+font-size:14px;
+
+color:#D2DBEC;
+
+opacity:0.9;
+
+}
+
+/* LOGIN PANEL */
+
+.login-panel{
+
+width:360px;
+
+padding:40px;
+
+border-radius:22px;
+
+/* Glass effect */
+
+background: rgba(255,255,255,0.08);
+
+backdrop-filter: blur(10px);
+
+border:1px solid rgba(255,255,255,0.4);
+
+/* INNER SHADOW */
+
+box-shadow:
+inset 10px 10px 30px -1px #345A80;
+
+}
+
+/* TITLE */
+
+.login-panel h2{
+
+text-align:center;
+
+font-family:'Poppins',sans-serif;
+
+margin-bottom:25px;
+
+font-weight:600;
+
+}
+
+/* LABEL */
+
+.login-panel label{
+
+font-size:14px;
+
+display:block;
+
+margin-bottom:6px;
+
+color:#D2DBEC;
+
+}
+
+/* INPUT */
+
+.login-panel input{
+
+width:100%;
+
+padding:10px 14px;
+
+margin-bottom:18px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,0.6);
+
+background:transparent;
+
+color:white;
+
+outline:none;
+
+font-family:'Inter',sans-serif;
+
+}
+
+/* PLACEHOLDER */
+
+.login-panel input::placeholder{
+
+color:#c8d4df;
+
+font-size:12px;
+
+}
+
+/* BUTTON LOGIN */
+
+.login-panel button{
+
+width:100%;
+
+padding:12px;
+
+border-radius:30px;
+
+/* STROKE */
+
+border:2px solid #D2DBEC;
+
+cursor:pointer;
+
+color:white;
+
+font-family:'Poppins',sans-serif;
+
+font-size:16px;
+
+/* GRADIENT 80% */
+
+background: linear-gradient(
+90deg,
+rgba(235,168,186,0.8),
+rgba(87,30,71,0.8),
+rgba(106,144,180,0.8)
+);
+
+/* glow */
+
+box-shadow:0 0 12px rgba(255,255,255,0.4);
+
+transition:0.3s;
+
+}
+
+/* HOVER */
+
+.login-panel button:hover{
+
+transform:scale(1.03);
+
+box-shadow:0 0 18px rgba(255,255,255,0.6);
+
+}
+
+</style>
+
 </head>
 
 <body>
-  <div class="max-w-[490px] mx-auto mt-[100px] px-6">
-    <!-- // top section -->
-    <div class="flex flex-col">
-      <span class="self-center p-2 px-3 rounded mx-auto bg-[#F2EBFD]"><i class="hgi hgi-stroke hgi-task-edit-01"></i></span>
-      <h1 class="text-center fs-4xl text-[32px] font-bold">Welcome Back</h1>
-      <p class="text-center max-w-[300px] mx-auto">Please sign in to continue managing your notes and ideas.</p>
-    </div>
 
-    <!-- // form section -->
-    <form action="./main.php" method="post" class="flex flex-col gap-4 mt-6">
-        <div class="flex flex-col gap-2">
-          <label for="email">Email</label>
-          <input type="email" name="input_email" id="email" class="p-2 bg-[#f8fafc] rounded border border-[#9DABBE]" placeholder="Enter your email">
-        </div>
-        <div class="flex flex-col gap-2">
-          <label for="password">Password</label>
-          <input type="password" name="input_password" id="password" class="p-2 bg-[#f8fafc] rounded border border-[#9DABBE]" placeholder="Enter your password">
-        </div>
+<div class="left">
 
-        <a href="./forgot-password.php" class="self-end text-[#7C3AED]">Forgot password?</a>
+<h1>SELAMAT<br>DATANG!</h1>
 
-        <button type="submit" class="bg-[#7C3AED] text-white font-bold p-2 mt-4 hover:bg-[#6b21a8] transition shadow-lg rounded">Sign In</button>
-      </form>
+<div class="line"></div>
 
-      <!-- // bottom section -->
-      <p class="text-center mt-6">Don't have an account? <a href="./register.php" class="text-[#7C3AED] font-bold">Register</a></p>
-  </div>
+<p>
+Login dengan akun google untuk dapat melakukan pemilihan.
+</p>
+
+</div>
+
+<div class="login-panel">
+
+<h2>Login</h2>
+
+<form method="POST">
+
+<label>Nama</label>
+<input type="text" name="nama" placeholder="Masukan nama">
+
+<label>NIS</label>
+<input type="text" name="nis" placeholder="Masukan NIS">
+
+<label>KODE</label>
+<input type="password" name="kode" placeholder="Masukan kode">
+
+<button type="submit" name="login">LOGIN</button>
+
+</form>
+
+</div>
 
 </body>
-
 </html>
