@@ -1,14 +1,20 @@
 <?php
+$nama_benar = "naraya";
+$nis_benar = "248222";
+$kode_benar = "12345";
+
 if(isset($_POST['login'])){
+
     $nama = $_POST['nama'];
-    $nis  = $_POST['nis'];
+    $nis = $_POST['nis'];
     $kode = $_POST['kode'];
 
-    // contoh validasi sederhana
-    if($nama == "admin" && $nis == "12345" && $kode == "abc"){
-        echo "<script>alert('Login Berhasil');</script>";
+    if($nama == $nama_benar && $nis == $nis_benar && $kode == $kode_benar){
+        header("Location: daftar.php");
+        exit();
     }else{
-        echo "<script>alert('Login Gagal');</script>";
+        header("Location: autentifikasi.php");
+        exit();
     }
 }
 ?>
@@ -18,146 +24,265 @@ if(isset($_POST['login'])){
 <head>
 <title>Login</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
+
 height:100vh;
-background:linear-gradient(135deg,#0b2f53,#3d6c94);
+
+font-family:'Inter',sans-serif;
+
 display:flex;
-justify-content:center;
+
 align-items:center;
-}
 
-/* kotak utama */
-.container{
-width:90%;
-height:90vh;
-background:linear-gradient(120deg,#041e35,#0f3a5e,#3a6b95);
-border:6px solid rgba(255,255,255,0.25);
-padding:70px;
-display:flex;
+justify-content:space-between;
+
+padding:120px;
+
+/* Background gradient Figma */
+
+background: linear-gradient(
+135deg,
+#345A80 0%,
+#01162B 44%,
+#02305E 71%,
+#6A90B4 100%
+);
+
 color:white;
+
 }
 
-/* kiri */
+/* TEXT KIRI */
+
 .left{
-width:50%;
+
+width:40%;
+
 }
 
 .left h1{
-font-size:48px;
-letter-spacing:5px;
-line-height:60px;
-margin-bottom:20px;
+
+font-family:'Poppins',sans-serif;
+
+font-size:64px;
+
+letter-spacing:8px;
+
+line-height:70px;
+
+margin-bottom:30px;
+
+color:#D2DBEC;
+
+}
+
+.line{
+
+width:160px;
+
+height:2px;
+
+background:#D2DBEC;
+
+margin-bottom:30px;
+
 }
 
 .left p{
-font-size:13px;
-width:260px;
-color:#cfd9e4;
-}
 
-/* kanan */
-.right{
-width:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+width:280px;
 
-/* kotak login */
-.login-box{
-width:270px;
-padding:25px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,0.5);
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(6px);
-}
+font-size:14px;
 
-.login-box h3{
-text-align:center;
-margin-bottom:15px;
-}
+color:#D2DBEC;
 
-/* label */
-.login-box label{
-font-size:12px;
-color:#dbe6f1;
-}
-
-/* input */
-.login-box input{
-width:100%;
-padding:8px;
-margin:6px 0 12px 0;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.6);
-background:transparent;
-color:white;
-outline:none;
-padding-left:12px;
-}
-
-/* tombol */
-.login-box button{
-width:100%;
-padding:9px;
-border:none;
-border-radius:20px;
-background:linear-gradient(to right,#c58aa5,#7fa6d4);
-color:white;
-cursor:pointer;
-margin-top:5px;
-font-weight:bold;
-}
-
-.login-box button:hover{
 opacity:0.9;
+
+}
+
+/* LOGIN PANEL */
+
+.login-panel{
+
+width:360px;
+
+padding:40px;
+
+border-radius:22px;
+
+/* Glass effect */
+
+background: rgba(255,255,255,0.08);
+
+backdrop-filter: blur(10px);
+
+border:1px solid rgba(255,255,255,0.4);
+
+/* INNER SHADOW */
+
+box-shadow:
+inset 10px 10px 30px -1px #345A80;
+
+}
+
+/* TITLE */
+
+.login-panel h2{
+
+text-align:center;
+
+font-family:'Poppins',sans-serif;
+
+margin-bottom:25px;
+
+font-weight:600;
+
+}
+
+/* LABEL */
+
+.login-panel label{
+
+font-size:14px;
+
+display:block;
+
+margin-bottom:6px;
+
+color:#D2DBEC;
+
+}
+
+/* INPUT */
+
+.login-panel input{
+
+width:100%;
+
+padding:10px 14px;
+
+margin-bottom:18px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,0.6);
+
+background:transparent;
+
+color:white;
+
+outline:none;
+
+font-family:'Inter',sans-serif;
+
+}
+
+/* PLACEHOLDER */
+
+.login-panel input::placeholder{
+
+color:#c8d4df;
+
+font-size:12px;
+
+}
+
+/* BUTTON LOGIN */
+
+.login-panel button{
+
+width:100%;
+
+padding:12px;
+
+border-radius:30px;
+
+/* STROKE */
+
+border:2px solid #D2DBEC;
+
+cursor:pointer;
+
+color:white;
+
+font-family:'Poppins',sans-serif;
+
+font-size:16px;
+
+/* GRADIENT 80% */
+
+background: linear-gradient(
+90deg,
+rgba(235,168,186,0.8),
+rgba(87,30,71,0.8),
+rgba(106,144,180,0.8)
+);
+
+/* glow */
+
+box-shadow:0 0 12px rgba(255,255,255,0.4);
+
+transition:0.3s;
+
+}
+
+/* HOVER */
+
+.login-panel button:hover{
+
+transform:scale(1.03);
+
+box-shadow:0 0 18px rgba(255,255,255,0.6);
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
-
 <div class="left">
+
 <h1>SELAMAT<br>DATANG!</h1>
-<p>Login dengan akun google untuk dapat melakukan penilaian.</p>
+
+<div class="line"></div>
+
+<p>
+Login dengan akun google untuk dapat melakukan pemilihan.
+</p>
+
 </div>
 
-<div class="right">
+<div class="login-panel">
 
-<div class="login-box">
-<h3>Login</h3>
+<h2>Login</h2>
 
-<form>
+<form method="POST">
 
 <label>Nama</label>
-<input type="text" placeholder="Masukan ID">
+<input type="text" name="nama" placeholder="Masukan nama">
 
 <label>NIS</label>
-<input type="text" placeholder="Masukan ID">
+<input type="text" name="nis" placeholder="Masukan NIS">
 
 <label>KODE</label>
-<input type="password" placeholder="Masukan ID">
+<input type="password" name="kode" placeholder="Masukan kode">
 
-<button>LOGIN</button>
+<button type="submit" name="login">LOGIN</button>
 
 </form>
-
-</div>
-
-</div>
 
 </div>
 
