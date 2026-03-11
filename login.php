@@ -78,7 +78,6 @@ margin-bottom:30px;
 .left p{
 width:280px;
 font-size:20px;
-weight: 30px;
 color:#D2DBEC;
 opacity:0.9;
 }
