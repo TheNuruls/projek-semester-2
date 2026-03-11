@@ -10,7 +10,7 @@ if(isset($_POST['login'])){
     $kode = $_POST['kode'];
 
     if($nama == $nama_benar && $nis == $nis_benar && $kode == $kode_benar){
-        header("Location: daftar.php");
+        header("Location: kandidat.php");
         exit();
     }else{
         header("Location: autentifikasi.php");
