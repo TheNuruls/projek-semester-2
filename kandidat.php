@@ -100,6 +100,9 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
@@ -110,13 +113,18 @@ header h1 {
 
 .card-container {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center; 
+    gap: 30px;               
     flex-wrap: wrap;
+    max-width: 1100px;       
+    width: 100%;
+    margin: 0 auto;
 }
 
 .card {
     width: 300px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
