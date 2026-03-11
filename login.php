@@ -60,8 +60,8 @@ width:40%;
 }
 
 .left h1{
-font-family:'Poppins',sans-serif;
-font-size:64px;
+font-family:'Poppins';
+font-size:75px;
 letter-spacing:8px;
 line-height:70px;
 margin-bottom:30px;
@@ -69,7 +69,7 @@ color:#D2DBEC;
 }
 
 .line{
-width:160px;
+width:260px;
 height:2px;
 background:#D2DBEC;
 margin-bottom:30px;
@@ -77,7 +77,8 @@ margin-bottom:30px;
 
 .left p{
 width:280px;
-font-size:14px;
+font-size:20px;
+weight: 30px;
 color:#D2DBEC;
 opacity:0.9;
 }
