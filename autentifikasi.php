@@ -97,7 +97,8 @@ margin-bottom:35px;
 
 display:inline-block;
 
-padding:10px 35px;
+padding:10px 55px;
+margin: auto;
 
 border-radius:25px;
 
