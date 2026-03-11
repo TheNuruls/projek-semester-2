@@ -1,31 +1,15 @@
 <?php
-session_start();
-
-$error = false;
-
-if(isset($_POST['login'])){
-
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    /* contoh akun */
-    $akun_email = "admin@gmail.com";
-    $akun_password = "12345";
-
-    if($email == $akun_email && $password == $akun_password){
-        echo "<script>alert('Login Berhasil');</script>";
-    }else{
-        $error = true;
-    }
-
-}
+// simulasi gagal login
+$gagal = true;
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Peringatan Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -33,138 +17,147 @@ if(isset($_POST['login'])){
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI, sans-serif;
 }
 
 body{
-height:100vh;
+
+height: 100vh;
 display:flex;
-justify-content:center;
 align-items:center;
-
-background: radial-gradient(circle at top left,#1e4c76,#0c2c48 60%,#081d30);
-}
-
-/* LOGIN BOX */
-
-.login-box{
-background:white;
-padding:30px;
-border-radius:10px;
-width:300px;
-text-align:center;
-}
-
-.login-box h2{
-margin-bottom:15px;
-}
-
-.login-box input{
-width:100%;
-padding:10px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-.login-box button{
-width:100%;
-padding:10px;
-background:#0c2c48;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-/* OVERLAY POPUP */
-
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
 justify-content:center;
-align-items:center;
+
+font-family:'Inter',sans-serif;
+
+background: linear-gradient(
+135deg,
+#345A80 0%,
+#01162B 44%,
+#02305E 71%,
+#6A90B4 100%
+);
+
 }
 
-/* POPUP */
+/* CONTAINER POPUP */
 
-.popup{
-width:420px;
-padding:35px;
+.popup-box{
+
+width:680px;
+
+padding:70px;
+
 text-align:center;
 
-background:rgba(255,255,255,0.08);
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.3);
+border-radius:16px;
 
-backdrop-filter:blur(10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
+/* glass */
+
+background: rgba(255,255,255,0.08);
+
+backdrop-filter: blur(14px);
+
+/* stroke */
+
+border:2px solid #D2DBEC;
+
+/* glow */
+
+box-shadow:
+0 10px 40px rgba(0,0,0,0.35),
+inset 0 0 20px rgba(255,255,255,0.08);
+
+color:#D2DBEC;
+
 }
 
-.popup h2{
-color:white;
-margin-bottom:15px;
+/* TITLE */
+
+.popup-box h1{
+
+font-family:'Poppins',sans-serif;
+font-size:30px;
+margin-bottom:20px;
+font-weight:600;
+
 }
 
-.popup p{
-color:#e0e6ef;
-margin-bottom:25px;
-line-height:1.5;
+/* TEXT */
+
+.popup-box p{
+
+font-size:20px;
+line-height:24px;
+margin-bottom:35px;
+
 }
 
-.popup button{
+/* BUTTON */
+
+.popup-box a{
+
+display:inline-block;
+
 padding:10px 35px;
-border-radius:25px;
-border:1px solid white;
 
-background:linear-gradient(#6f7390,#444861);
+border-radius:25px;
+
+text-decoration:none;
+
+font-family:'Poppins';
+
+font-size:14px;
+
 color:white;
 
-cursor:pointer;
+/* stroke */
+border:2px solid #D2DBEC;
+
+/* gradient */
+
+background: linear-gradient(
+90deg,
+rgba(235,168,186,0.8),
+rgba(87,30,71,0.8),
+rgba(106,144,180,0.8)
+);
+
+/* glow */
+
+box-shadow:0 0 10px rgba(255,255,255,0.4);
+
+transition:0.3s;
+
+}
+
+/* hover */
+
+.popup-box a:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 18px rgba(255,255,255,0.7);
+
 }
 
 </style>
 </head>
+
 <body>
 
-<div class="login-box">
-<h2>LOGIN</h2>
+<?php if($gagal){ ?>
 
-<form method="POST">
-<input type="email" name="email" placeholder="Email" required>
-<input type="password" name="password" placeholder="Password" required>
+<div class="popup-box">
 
-<button type="submit" name="login">LOGIN</button>
-</form>
-
-</div>
-
-<?php if($error){ ?>
-
-<div class="overlay">
-<div class="popup">
-
-<h2>Peringatan!</h2>
+<h1>Peringatan!</h1>
 
 <p>
 Autentifikasi Gagal ! <br>
 Email dan Password salah.
 </p>
 
-<button onclick="kembali()">KEMBALI</button>
+<a href="login.php">KEMBALI</a>
 
 </div>
-</div>
-
-<script>
-function kembali(){
-location.href="login.php";
-}
-</script>
 
 <?php } ?>
 
