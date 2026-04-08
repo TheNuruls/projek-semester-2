@@ -40,7 +40,7 @@ font-family:'Inter',sans-serif;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:120px;
+padding:100px;
 
 background: linear-gradient(
 135deg,
@@ -85,12 +85,14 @@ opacity:0.9;
 /* panel */
 
 .login-panel{
-width:360px;
-padding:40px;
+width:440px;
+height:540px;
+margin:40px;
+padding:50px;
 border-radius:22px;
 background: rgba(255,255,255,0.08);
 backdrop-filter: blur(10px);
-border:1px solid rgba(255,255,255,0.4);
+border:2px solid #D2DBEC;
 box-shadow: inset 10px 10px 30px -1px #345A80;
 }
 
@@ -98,11 +100,11 @@ box-shadow: inset 10px 10px 30px -1px #345A80;
 text-align:center;
 font-family:'Poppins',sans-serif;
 margin-bottom:25px;
-font-weight:600;
+font-size:40px;
 }
 
 .login-panel label{
-font-size:14px;
+font-size:16px;
 display:block;
 margin-bottom:6px;
 color:#D2DBEC;
@@ -110,10 +112,10 @@ color:#D2DBEC;
 
 .login-panel input{
 width:100%;
-padding:10px 14px;
-margin-bottom:18px;
+padding:15px 14px;
+margin-bottom:25px;
 border-radius:25px;
-border:1px solid rgba(255,255,255,0.6);
+border:2px solid#D2DBEC;
 background:transparent;
 color:white;
 outline:none;
@@ -125,23 +127,23 @@ font-size:12px;
 }
 
 .login-panel button{
-width:100%;
-padding:12px;
+width:230px;
+padding:10px;
+margin-top:25px;
+margin-left:50px;
 border-radius:30px;
 border:2px solid #D2DBEC;
 cursor:pointer;
 color:white;
 font-family:'Poppins',sans-serif;
-font-size:16px;
-
+font-size:25px;
 background: linear-gradient(
 90deg,
 rgba(235,168,186,0.8),
 rgba(87,30,71,0.8),
 rgba(106,144,180,0.8)
 );
-
-box-shadow:0 0 12px rgba(255,255,255,0.4);
+box-shadow:0 0 12px #D2DBEC;
 transition:0.3s;
 }
 
