@@ -117,7 +117,7 @@ font-size:12px;
 width:230px;
 padding:10px;
 margin-top:25px;
-margin-left:50px;
+margin-left:50px; 
 border-radius:30px;
 border:2px solid #D2DBEC;
 cursor:pointer;
