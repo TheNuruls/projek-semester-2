@@ -260,7 +260,7 @@ $kandidat = [
                             <h4><?php echo $k['nama']; ?></h4>
                             <p><?php echo $k['deskripsi']; ?></p>
                         </div>
-                        <button class="btn-lihat">LIHAT</button>
+                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">LIHAT</a>
                     </div>
                 </div>
                 <?php endforeach; ?>
