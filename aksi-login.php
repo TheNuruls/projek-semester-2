@@ -16,7 +16,7 @@ if(isset($_POST['login'])) {
     $result = mysqli_query($conn, $query);
     
     // Cek apakah user ditemukan
-    if(mysqli_num_rows($result) == 1) {
+    if(mysqli_num_rows($result) == 1) {l
         // User ditemukan, ambil datanya
         $user = mysqli_fetch_assoc($result);
         
