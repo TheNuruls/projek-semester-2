@@ -1,5 +1,18 @@
 <?php
-// Simulasi data kandidat dari database
+session_start();
+
+// Cek apakah user sudah login
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit();
+}
+
+include 'config.php';
+
+// Ambil nama user dari session
+$nama_user = $_SESSION['nama'];
+
+// Simulasi data kandidat dari database (sementara tetap pakai array)
 $kandidat = [
     [
         "no" => 1,
@@ -38,7 +51,6 @@ $kandidat = [
     }
 
     body {
-        /* Gradasi background sesuai gambar contoh */
         background: linear-gradient(
 135deg,
 #345A80 0%,
@@ -55,7 +67,6 @@ $kandidat = [
         min-height: 100vh;
     }
 
-    /* Sidebar Styling */
     .sidebar {
         width: 280px;
         background: rgba(255, 255, 255, 0.05);
@@ -67,29 +78,20 @@ $kandidat = [
         box-shadow: 10px 10px 30px -1px #345A80 inset;
     }
 
-   /* Sidebar Styling */
-.logo {
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+    .logo {
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.logo img {
-    width: 200px;
-    height: auto;
-    margin-bottom: 10px;
-}
+    .logo img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
 
-.logo h2 {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    font-weight: bold;
-}
     .btn-nav {
         display: block;
         padding: 12px 25px;
@@ -104,8 +106,8 @@ $kandidat = [
     }
 
     .btn-nav.active {
-     color: #D2DBEC;
-     background: #6A90B4;
+        color: #D2DBEC;
+        background: #6A90B4;
     }
 
     .user-section {
@@ -124,11 +126,9 @@ $kandidat = [
         cursor: pointer;
         font-size: 16px;
         display: block;
-        /* Glow Putih sesuai gambar */
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
 
-    /* Main Content Styling */
     .main-content {
         flex: 1;
         padding: 60px 40px;
@@ -168,7 +168,6 @@ $kandidat = [
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Shadow lembut agar card menyatu dengan background */
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         box-shadow: 10px 10px 30px -1px #345A80 inset;
     }
@@ -203,12 +202,8 @@ $kandidat = [
         text-align: left; 
         margin-bottom: 25px;
         padding: 0 15px;
-        margin-bottom: 25px;
-        padding: 0 15px;
         font-size: 16px;
         color: #D2DBEC;
-        line-height: 1.5;
-        margin-bottom: 25px;
     }
 
     .btn-lihat {
@@ -217,15 +212,9 @@ $kandidat = [
         border-radius: 30px;
         border: 1.5px solid rgba(255, 255, 255, 0.5);
         background: linear-gradient(to right, #9e6074, #4e2e50, #415e81);
-        fill: linear-gradient(90deg, rgba(235, 168, 186, 0.80) 0%, rgba(87, 30, 71, 0.80) 50%, rgba(106, 144, 180, 0.80) 100%);
-        stroke-width: 2px;
-        stroke: #D2DBEC;
-        filter: drop-shadow(0 4px 10.9px #6A90B4);
         color: white;
-        font-weight:;
         font-size: 16px;
         cursor: pointer;
-        /* Glow Putih kuat sesuai contoh */
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         transition: 0.3s;
     }
@@ -240,7 +229,7 @@ $kandidat = [
     <div class="container">
         <aside class="sidebar">
             <div class="logo">
-                <img src="logo.png">
+                <img src="logo.png" alt="Logo">
             </div>
             
             <nav class="menu">
@@ -249,8 +238,8 @@ $kandidat = [
             </nav>
 
             <div class="user-section">
-                <p>Halo, Naraya!</p>
-                <button class="btn-logout">Logout</button>
+                <p>Halo, <?php echo $nama_user; ?>!</p>
+                <a href="logout.php"><button class="btn-logout">Logout</button></a>
             </div>
         </aside>
 
@@ -271,7 +260,7 @@ $kandidat = [
                             <h4><?php echo $k['nama']; ?></h4>
                             <p><?php echo $k['deskripsi']; ?></p>
                         </div>
-                        <button class="btn-lihat">LIHAT</button>
+                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">LIHAT</a>
                     </div>
                 </div>
                 <?php endforeach; ?>

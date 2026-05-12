@@ -1,46 +1,43 @@
 <?php
+// Mulai session
+session_start();
+// Panggil koneksi database
+include 'config.php';
 
-// memanggil koneksi di config.php  
-include "./config.php";
-
-// echo $_POST['input_email'];
-// echo "<br />";
-// echo $_POST['input_password'];
-
-// memanggil koneksi di config.php 
-include "./config.php";
-
-// query untuk mengambil data dari user dengan email = $_POST['input_email']
-$query = "SELECT * FROM users WHERE email='".$_POST['inputan_email']."'";
-
-// menjalankan query dengan koneksi dari $conn
-// result di sini akan digunakan untuk memanggil data
-$result = $conn->query($query);
-
-// cek jumlah data menggunakan $result
-echo "jumlah data: ";
-echo $result->num_rows;
-echo "<br /> <br />";
-
-// cek jumlah data menggunakan $result
-echo "jumlah data: ";
-echo $result->num_rows;
-echo "<br /> <br />";
-
-// memanggil data dengan $result
-$row = $result->fetch_assoc();
-
-if ($result->num_rows == 0) {
-  // jika num_rows = 0 berarti tidak ada data yang ditemukan dari database 
-  // echo "Akun tidak ditemukan";
-  header("location:index.php");
-  exit(); // langsung akhiri eksekusi tanpa harus lanjut ke bawah
+if(isset($_POST['login'])) {
+    
+    // Ambil data dari form
+    $nama = mysqli_real_escape_string($conn, $_POST['nama']);
+    $nis = mysqli_real_escape_string($conn, $_POST['nis']);
+    $kode = mysqli_real_escape_string($conn, $_POST['kode']);
+    
+    // Query cek user berdasarkan name, username, dan plain_code
+    $query = "SELECT * FROM users WHERE name = '$nama' AND username = '$nis' AND plain_code = '$kode'";
+    $result = mysqli_query($conn, $query);
+    
+    // Cek apakah user ditemukan
+    if(mysqli_num_rows($result) == 1) {l
+        // User ditemukan, ambil datanya
+        $user = mysqli_fetch_assoc($result);
+        
+        // Simpan data ke session
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['nama'] = $user['name'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['is_admin'] = $user['is_admin'];
+        
+        // Redirect ke halaman kandidat (atau main.php seperti kode kamu)
+        header("Location: kandidat.php");
+        exit();
+    } else {
+        // User tidak ditemukan, redirect ke halaman gagal
+        header("Location: autentifikasi.php");
+        exit();
+    }
+    
 } else {
-  if ($_POST['inputan_password'] == $row['password']) {
-    // echo "Anda berhasil login";
-    header("location:main.php");
-  } else {
-    // echo "Password anda salah";
-    header("location:index.php");
-  }
+    // Jika tidak ada submit login, balik ke halaman login
+    header("Location: login.php");
+    exit();
 }
+?>
