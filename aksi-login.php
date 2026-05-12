@@ -1,11 +1,9 @@
 <?php
 // Mulai session
 session_start();
-
 // Panggil koneksi database
-include 'koneksi.php';
+include 'config.php';
 
-// Cek apakah form sudah disubmit
 if(isset($_POST['login'])) {
     
     // Ambil data dari form
