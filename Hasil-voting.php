@@ -217,7 +217,7 @@
 <body>
     <div class="sidebar">
         <div class="logo">
-            <img src="logo vt.png" alt="Votify PKS" class="logo-img">
+            <img src="logo.png" alt="Votify PKS" class="logo-img">
         </div>
         
         <div class="menu-item">
@@ -242,7 +242,7 @@
             <div class="candidate-card">
                 <div class="candidate-label">KANDIDAT 1</div>
                 <div class="photo-container">
-                    <img src="dicky.ft.png" alt="Dicky Hendry K." class="candidate-photo">
+                    <img src="1.png" alt="Dicky Hendry K." class="candidate-photo">
                 </div>
                 <div class="candidate-name">Dicky Hendry K.</div>
                 <div class="total-voting">Total voting</div>
@@ -253,7 +253,7 @@
             <div class="candidate-card">
                 <div class="candidate-label">KANDIDAT 2</div>
                 <div class="photo-container">
-                    <img src="betrand.png" alt="Betran Aulia Dipa" class="candidate-photo">
+                    <img src="2.png" alt="Betran Aulia Dipa" class="candidate-photo">
                 </div>
                 <div class="candidate-name">Betran Aulia Dipa</div>
                 <div class="total-voting">Total voting</div>
@@ -264,7 +264,7 @@
             <div class="candidate-card">
                 <div class="candidate-label">KANDIDAT 3</div>
                 <div class="photo-container">
-                    <img src="keysha.png" alt="Keysha Oktavia" class="candidate-photo">
+                    <img src="4.png" alt="Keysha Oktavia" class="candidate-photo">
                 </div>
                 <div class="candidate-name">Keysha Oktavia</div>
                 <div class="total-voting">Total voting</div>
