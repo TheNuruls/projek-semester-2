@@ -245,8 +245,10 @@ $kandidat = [
                         </div>
                         <div class="info">
                             <h4><?php echo $k['nama']; ?></h4>
+                            <p>Apakah kamu yakin ingin memilih kandidat tersebut?</p>
                         </div>
-                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">LIHAT</a>
+                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">TIDAK</a>
+                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">YA</a>
                     </div>
                 </div>
                 <?php endforeach; ?>
