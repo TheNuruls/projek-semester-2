@@ -149,12 +149,12 @@ $kandidat = [
         font-size: 25px;
     }
 
-        .pesan2 {
+    .pesan2 {
         text-align: center;
         letter-spacing: 1px;
         margin-bottom: 70px;
         margin-top: 5px;
-        font-size: 20px;
+        font-size: 23px;
     }
 
     .card-container {

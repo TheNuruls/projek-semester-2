@@ -525,7 +525,7 @@ body{
     <div class="left-panel"></div>
 
     <!-- FOTO -->
-    <img src="c:\Users\RPL\Downloads\1 39.png" alt="Dicky" class="candidate-photo">
+    <img src="dicky-hp.png">
 
     <!-- LOGO -->
     <div class="logo">
