@@ -157,6 +157,25 @@ $kandidat = [
         align-items: center;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         box-shadow: 10px 10px 30px -1px #345A80 inset;
+        margin-bottom: 20px;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        
+    }
+
+    .btn-lihat {
+        width: 120px; 
+        padding: 12px;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        
     }
 
     .image-box {
@@ -236,23 +255,28 @@ $kandidat = [
             </header>
 
             <div class="card-container">
-                <?php foreach ($kandidat as $k): ?>
-                <div class="card">
-                    <h3>KANDIDAT <?php echo $k['no']; ?></h3>
-                    <div class="card-inner">
-                        <div class="image-box">
-                            <img src="<?php echo $k['foto']; ?>" alt="<?php echo $k['nama']; ?>">
-                        </div>
-                        <div class="info">
-                            <h4><?php echo $k['nama']; ?></h4>
-                            <p>Apakah kamu yakin ingin memilih kandidat tersebut?</p>
-                        </div>
-                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">TIDAK</a>
-                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">YA</a>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+    <?php foreach ($kandidat as $k): ?>
+    <div class="card">
+        <h3>KANDIDAT <?php echo $k['no']; ?></h3>
+        
+        <div class="card-inner">
+            <div class="image-box">
+                <img src="<?php echo $k['foto']; ?>" alt="<?php echo $k['nama']; ?>">
             </div>
+            <div class="info">
+                <h4><?php echo $k['nama']; ?></h4>
+                <p>Apakah kamu yakin ingin memilih kandidat tersebut?</p>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="daftar-kandidat.php" class="btn-lihat">TIDAK</a>
+            <a href="proses-vote.php?id=<?php echo $k['no']; ?>" class="btn-lihat">YA</a>
+        </div>
+        
+    </div>
+    <?php endforeach; ?>
+</div>
         </main>
     </div>
 </body>
