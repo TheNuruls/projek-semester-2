@@ -21,7 +21,7 @@
 
         /* Sidebar */
         .sidebar {
-            width: 280px;
+            width: 230px;
             background: rgba(0, 0, 0, 0.2);
             padding: 30px 20px;
             display: flex;
@@ -154,7 +154,7 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 25px;
             padding: 25px;
-            width: 320px;
+            width: 290px;
             text-align: center;
             color: white;
             display: flex;
@@ -171,7 +171,7 @@
 
         .photo-container {
             width: 200px;
-            height: 240px;
+            height: 200px;
             margin: 0 auto 20px;
             border-radius: 20px;
             overflow: hidden;
