@@ -65,17 +65,17 @@ body{
 
     width:345px;
     height:100%;
-
+    border-left:2px solid #D2DBEC;
     border-right:2px solid #D2DBEC;
 
     background:
     radial-gradient(
-        circle at center left,
-        #AE6B97 7%,
-        #6A90B4 15%,
-        #EAE8E6 18%,
-        #571E47 30%,
-        #F9F2EC 80%
+        circle at  top right,
+        #AE6B97 5%,
+        #6A90B4 58%,
+        #EAE8E6 72%,
+        #571E47 90%,
+        #6A90B4 100%
     );
 
     overflow:hidden;
@@ -88,11 +88,7 @@ img{
     top:94px;
     right:860px;
     width:600px;
-    object-fit:contain;
 
-    filter:
-    grayscale(100%)
-    drop-shadow(0 0 18px rgba(255,255,255,0.18));
 }
 
 /* LOGO */
