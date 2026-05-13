@@ -70,12 +70,12 @@ body{
 
     background:
     radial-gradient(
-        circle at top left,
+        circle at center left,
         #AE6B97 7%,
-        #6A90B4 11%,
-        #EAE8E6 14%,
-        #571E47 29%,
-        #F9F2EC 86%
+        #6A90B4 15%,
+        #EAE8E6 18%,
+        #571E47 30%,
+        #F9F2EC 80%
     );
 
     overflow:hidden;
@@ -83,16 +83,11 @@ body{
 
 /* FOTO */
 
-.candidate-photo{
+img{
     position:absolute;
-
-    top:88px;
-    left:35px;
-
-    width:470px;
-
-    z-index:5;
-
+    top:94px;
+    right:860px;
+    width:600px;
     object-fit:contain;
 
     filter:
