@@ -65,17 +65,17 @@ body{
 
     width:345px;
     height:100%;
-
+    border-left:2px solid #D2DBEC;
     border-right:2px solid #D2DBEC;
 
     background:
     radial-gradient(
-        circle at top left,
-        #AE6B97 7%,
-        #6A90B4 11%,
-        #EAE8E6 14%,
-        #571E47 29%,
-        #F9F2EC 86%
+        circle at  top right,
+        #AE6B97 5%,
+        #6A90B4 58%,
+        #EAE8E6 72%,
+        #571E47 90%,
+        #6A90B4 100%
     );
 
     overflow:hidden;
@@ -83,21 +83,12 @@ body{
 
 /* FOTO */
 
-.candidate-photo{
+img{
     position:absolute;
+    top:94px;
+    right:860px;
+    width:600px;
 
-    top:88px;
-    left:35px;
-
-    width:470px;
-
-    z-index:5;
-
-    object-fit:contain;
-
-    filter:
-    grayscale(100%)
-    drop-shadow(0 0 18px rgba(255,255,255,0.18));
 }
 
 /* LOGO */
@@ -525,7 +516,7 @@ body{
     <div class="left-panel"></div>
 
     <!-- FOTO -->
-    <img src="c:\Users\RPL\Downloads\1 39.png" alt="Dicky" class="candidate-photo">
+    <img src="dicky-hp.png">
 
     <!-- LOGO -->
     <div class="logo">
