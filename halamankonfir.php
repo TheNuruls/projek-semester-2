@@ -10,7 +10,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -19,6 +18,7 @@ body {
     display: flex;
     color: white;
     overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -188,7 +188,7 @@ header h1 {
                 <div class="candidate-card">
                     <h3>KANDIDAT 1</h3>
                     <div class="image-box">
-                        <img src="dicky.png" alt="Dicky Hendry K.">
+                        <img src="1.png" alt="Dicky Hendry K.">
                         <div class="name-tag">Dicky Hendry K.</div>
                     </div>
                 </div>
