@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Cek apakah user sudah login
+
 if(!isset($_SESSION['user_id'])){
     header("Location: login.php");
     exit();
@@ -9,10 +9,9 @@ if(!isset($_SESSION['user_id'])){
 
 include 'config.php';
 
-// Ambil nama user dari session
+
 $nama_user = $_SESSION['nama'];
 
-// Simulasi data kandidat dari database (sementara tetap pakai array)
 $kandidat = [
     [
         "no" => 1,
@@ -207,16 +206,22 @@ $kandidat = [
     }
 
     .btn-lihat {
-        width: 160px;
-        padding: 16px;
+        width: 180px;
+        padding:14px;
+        padding-bottom:16px;
+        padding-right:18px;
+        padding-left: 18px;
         border-radius: 30px;
-        border: 1.5px solid rgba(255, 255, 255, 0.5);
+        border: 2px solid rgba(255, 255, 255, 0.5);
         background: linear-gradient(to right, #9e6074, #4e2e50, #415e81);
         color: white;
-        font-size: 16px;
+        font-size: 20px;
         cursor: pointer;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
         transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
     }
 
     .btn-lihat:hover {
@@ -234,7 +239,7 @@ $kandidat = [
             
             <nav class="menu">
                 <a href="#" class="btn-nav active">Voting</a>
-                <a href="#" class="btn-nav">Hasil Voting</a>
+                <a href="Hasil-voting.php" class="btn-nav">Hasil Voting</a>
             </nav>
 
             <div class="user-section">
@@ -260,7 +265,7 @@ $kandidat = [
                             <h4><?php echo $k['nama']; ?></h4>
                             <p><?php echo $k['deskripsi']; ?></p>
                         </div>
-                        <a href="info-kandidat.php?id=<?php echo $k['no']; ?>" class="btn-lihat" style="text-decoration: none; display: inline-block; text-align: center;">LIHAT</a>
+                       <a href="detail-kandidat-<?php echo $k['no']; ?>.php" class="btn-lihat">LIHAT</a>
                     </div>
                 </div>
                 <?php endforeach; ?>

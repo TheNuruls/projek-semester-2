@@ -4,7 +4,14 @@ session_start();
 include 'config.php';
 
 if(isset($_SESSION['user_id'])) {
-    header("Location: kandidat.php");
+    // Jika sudah login, cek apakah user sudah voting
+    $user_id = $_SESSION['user_id'];
+    $check = $conn->query("SELECT id FROM votes WHERE user_id = $user_id AND voting_event_id = 1");
+    if($check && $check->num_rows > 0) {
+        header("Location: selesai.php");
+    } else {
+        header("Location: kandidat.php");
+    }
     exit();
 }
 
@@ -24,7 +31,13 @@ if(isset($_POST['login'])){
         $_SESSION['username'] = $user['username'];
         $_SESSION['is_admin'] = $user['is_admin'];
         
-        header("Location: kandidat.php");
+        // Cek apakah user sudah pernah voting
+        $check = $conn->query("SELECT id FROM votes WHERE user_id = ".$user['id']." AND voting_event_id = 1");
+        if($check && $check->num_rows > 0) {
+            header("Location: selesai.php");
+        } else {
+            header("Location: kandidat.php");
+        }
         exit();
     } else {
         $error = "Nama, NIS, atau Kode salah!";
@@ -78,7 +91,7 @@ opacity:0.9;
 }
 .login-panel{
 width:440px;
-height:540px;
+height:565px;
 margin:40px;
 padding:50px;
 border-radius:22px;
@@ -90,7 +103,7 @@ box-shadow: inset 10px 10px 30px -1px #345A80;
 .login-panel h2{
 text-align:center;
 font-family:'Poppins',sans-serif;
-margin-bottom:25px;
+margin-bottom:14px;
 font-size:40px;
 }
 .login-panel label{
